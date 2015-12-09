@@ -1,4 +1,22 @@
+@import 'reset';
+
 body {
-  background: pink;
+  overflow: hidden;
 }
 
+$cardHeight: 180px;
+
+.questions {
+  transition: 1s;
+  transform: translate(0, calc(50vh - #{$cardHeight / 2}));
+}
+
+.card {
+  opacity: 0;
+  height: $cardHeight;
+  transition: 1s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+  }
+}

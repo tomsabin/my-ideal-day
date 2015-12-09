@@ -1,10 +1,32 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="application.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My Ideal Day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="application.css">
+  </head>
+  <body>
+    <div class="questions" data-cards-container>
 
-</body>
+      <div class="card visible" data-card-index="0">
+        <label for="idealDay">Ideal day</label>
+        <textarea autofocus id="idealDay"></textarea>
+        <button>Next</button>
+      </div>
+
+      <div class="card" data-card-index="1">
+        <label for="dayToday">Day today</label>
+        <textarea id="dayToday"></textarea>
+        <button>Next</button>
+      </div>
+
+      <div class="card" data-card-index="2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, quasi maxime obcaecati, modi veritatis odio. Est in ab dolorum, aut, quis minus ullam ipsa nostrum, blanditiis dicta eos tempora neque?
+        <input type="text">
+      </div>
+
+    </div>
+    <script src="application.js"></script>
+  </body>
 </html>
