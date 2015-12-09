@@ -46,15 +46,105 @@ table {
   border-spacing: 0; }
 
 body {
+  background-color: #AC8ECE;
+  font-family: sans-serif;
   overflow: hidden; }
 
 .questions {
-  transition: 1s;
-  transform: translate(0, calc(50vh - 90px)); }
+  transform: translate(0, calc(50vh - 185px));
+  transition: 1s; }
 
 .card {
+  height: 370px;
   opacity: 0;
-  height: 180px;
   transition: 1s ease-in-out; }
   .card.visible {
     opacity: 1; }
+
+.questions {
+  box-sizing: border-box;
+  counter-reset: questions;
+  margin: 0 auto;
+  max-width: 500px;
+  padding-left: 46px; }
+
+.question {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0; }
+
+.question__label {
+  background-color: white;
+  border-top-right-radius: 8px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 26px;
+  line-height: 0;
+  padding: 25px 28px;
+  position: relative;
+  width: 100%; }
+  .question__label:before {
+    background: #654393;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    box-sizing: border-box;
+    color: white;
+    counter-increment: questions;
+    content: counter(questions);
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    left: -50px;
+    line-height: 0;
+    padding: 25px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 50px; }
+
+.question__input {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 0;
+  box-sizing: border-box;
+  color: #666666;
+  display: block;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 200;
+  height: 220px;
+  line-height: 1.2;
+  margin: 0;
+  outline: 0;
+  padding: 0 28px 20px;
+  resize: none;
+  width: 100%; }
+  .question__input:disabled {
+    background-color: white;
+    color: inherit; }
+
+.question__submit {
+  align-self: flex-end;
+  background: #654393;
+  border-radius: 8px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 17px;
+  line-height: 0;
+  margin-top: 16px;
+  outline: 0;
+  padding: 22px 0;
+  text-transform: uppercase;
+  width: 45%; }
+  .question__submit:not(:disabled):focus, .question__submit:not(:disabled):hover {
+    background: #714ba5; }
+  .question__submit:disabled {
+    cursor: default; }
+
+.question--blue .question__label {
+  color: #1fbbc9; }
+
+.question--orange .question__label {
+  color: #faaa4c; }

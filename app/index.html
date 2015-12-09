@@ -10,15 +10,27 @@
     <div class="questions" data-cards-container>
 
       <div class="card visible" data-card-index="0">
-        <label for="idealDay">Ideal day</label>
-        <textarea autofocus id="idealDay"></textarea>
-        <button>Next</button>
+        <div class="question question--blue">
+          <label class="question__label" for="idealDay">
+            My ideal day is ...
+          </label>
+          <textarea class="question__input" autofocus id="idealDay"></textarea>
+          <button class="question__submit">
+            Next question
+          </button>
+        </div>
       </div>
 
       <div class="card" data-card-index="1">
-        <label for="dayToday">Day today</label>
-        <textarea id="dayToday"></textarea>
-        <button>Next</button>
+        <div class="question question--orange">
+          <label class="question__label" for="dayToday">
+            Today I ...
+          </label>
+          <textarea class="question__input" id="dayToday"></textarea>
+          <button class="question__submit">
+            Next question
+          </button>
+        </div>
       </div>
 
       <div class="card" data-card-index="2">

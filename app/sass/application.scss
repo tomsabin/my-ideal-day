@@ -1,22 +1,32 @@
 @import 'reset';
 
+$blue: #1fbbc9;
+$gray: #666666;
+$orange: #faaa4c;
+$purple: #654393;
+
 body {
+  background-color: #AC8ECE;
+  font-family: sans-serif;
   overflow: hidden;
 }
 
-$cardHeight: 180px;
+$cardHeight: 370px;
 
 .questions {
-  transition: 1s;
   transform: translate(0, calc(50vh - #{$cardHeight / 2}));
+  transition: 1s;
 }
 
 .card {
-  opacity: 0;
   height: $cardHeight;
+  opacity: 0;
   transition: 1s ease-in-out;
 
   &.visible {
     opacity: 1;
   }
 }
+
+@import 'questions';
+@import 'question';
