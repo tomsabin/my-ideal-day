@@ -5,7 +5,8 @@
     <title>My Ideal Day</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="application.css">
-    <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+    <script src="vendor/parse.min.js"></script>
+    <script src="vendor/mustache.min.js"></script>
     <script type="text/javascript">
       (function() {
         var path = '//easy.myfonts.net/v2/js?&sid=249134(font-family=Gentleman+Light)&sid=249135(font-family=Gentleman+Book)&sid=249138(font-family=Gentleman+Bold)&key=DElnFXZut8',
@@ -57,6 +58,29 @@
       </div>
 
     </div>
+
+    <script id="submissionTemplate" type="text/mustache">
+      <div class="submissions__container">
+        {{ #. }}
+          <div class="submission {{ latestSubmissionClass }}">
+            <div class="submission__name">
+              {{ #name }}
+                {{ name }} says:
+              {{ /name }}
+              {{ ^name }}
+                Anonymous says:
+              {{ /name }}
+            </div>
+            <div class="submission__ideal-day">
+              {{ idealDay }}
+            </div>
+            <div class="submission__today">
+              {{ today }}
+            </div>
+          </div>
+        {{ /. }}
+      </div>
+    </script>
     <script src="application.js"></script>
   </body>
 </html>

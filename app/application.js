@@ -74,5 +74,18 @@ document.querySelector('[data-card-submit] button').addEventListener('click', fu
 });
 
 function renderSubmissions (latestSubmission, submissions) {
+  var cardsContainer = document.querySelector('[data-cards-container]');
+  cardsContainer.style.transform = 'translate(0, -200vh)';
+  cardsContainer.style.opacity = '0';
+  cardsContainer.style.height = '0';
 
+  var submissionsContainer = document.createElement('div');
+  submissionsContainer.className = 'submissions';
+
+  latestSubmission['latestSubmissionClass'] = 'submission--latest';
+  var template = document.getElementById('submissionTemplate').innerHTML;
+  var view = [latestSubmission].concat(submissions);
+  submissionsContainer.innerHTML = Mustache.render(template, view);
+
+  document.body.appendChild(submissionsContainer);
 }
