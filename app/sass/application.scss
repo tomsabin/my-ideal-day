@@ -5,9 +5,19 @@ $gray: #666666;
 $orange: #faaa4c;
 $purple: #654393;
 
+html {
+  height: 100%;
+}
+
 body {
-  background-color: #AC8ECE;
+  background-color: #BB9BDA;
+  background-position: center;
+  background-size: cover;
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: sans-serif;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -28,5 +38,6 @@ $cardHeight: 370px;
   }
 }
 
+@import 'background_video';
 @import 'questions';
 @import 'question';

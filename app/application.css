@@ -45,9 +45,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html {
+  height: 100%; }
+
 body {
-  background-color: #AC8ECE;
+  background-color: #BB9BDA;
+  background-position: center;
+  background-size: cover;
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: sans-serif;
+  height: 100%;
   overflow: hidden; }
 
 .questions {
@@ -60,6 +69,15 @@ body {
   transition: 1s ease-in-out; }
   .card.visible {
     opacity: 1; }
+
+.background-video {
+  height: auto;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%); }
 
 .questions {
   box-sizing: border-box;
