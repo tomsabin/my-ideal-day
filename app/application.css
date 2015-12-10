@@ -55,7 +55,7 @@ body {
   background-image: url(background.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: sans-serif;
+  font-family: 'Gentleman Book', sans-serif;
   height: 100%;
   overflow: hidden; }
 
@@ -98,7 +98,7 @@ body {
   display: block;
   font-size: 26px;
   line-height: 0;
-  padding: 25px 28px;
+  padding: 26px 28px 23px;
   position: relative;
   width: 100%; }
   .question__label:before {
@@ -110,11 +110,12 @@ body {
     counter-increment: questions;
     content: counter(questions);
     display: block;
-    font-size: 28px;
+    font-family: 'Gentleman Bold', sans-serif;
+    font-size: 24px;
     font-weight: 600;
     left: -50px;
     line-height: 0;
-    padding: 25px 0;
+    padding: 25px 0 23px;
     position: absolute;
     text-align: center;
     top: 0;
@@ -127,7 +128,7 @@ body {
   box-sizing: border-box;
   color: #666666;
   display: block;
-  font-family: inherit;
+  font-family: 'Gentleman Light', sans-serif;
   font-size: 18px;
   font-weight: 200;
   height: 220px;
@@ -149,11 +150,12 @@ body {
   color: white;
   cursor: pointer;
   display: block;
+  font-family: 'Gentleman Bold', sans-serif;
   font-size: 17px;
   line-height: 0;
   margin-top: 16px;
   outline: 0;
-  padding: 22px 0;
+  padding: 25px 0 22px;
   text-transform: uppercase;
   width: 45%; }
   .question__submit:not(:disabled):focus, .question__submit:not(:disabled):hover {
