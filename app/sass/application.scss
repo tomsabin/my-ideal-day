@@ -2,6 +2,7 @@
 
 $blue: #1fbbc9;
 $gray: #666666;
+$green: #6DD468;
 $orange: #faaa4c;
 $purple: #654393;
 
@@ -26,6 +27,10 @@ $cardHeight: 370px;
 
 .card {
   height: $cardHeight;
+}
+
+.card,
+.card--submit {
   opacity: 0;
   transition: 1s ease-in-out;
 
@@ -37,5 +42,6 @@ $cardHeight: 370px;
 @import 'background_video';
 @import 'questions';
 @import 'question';
+@import 'submit';
 @import 'submissions';
 @import 'submission';

@@ -5,10 +5,11 @@ function log (message, object) {
   console.log(new Date().getTime(), message, object);
 }
 
-function cardClick (event) {
+function cardClick (event, callback) {
   function findParent (element, attribute) {
     while ((element = element.parentElement) && !element.hasAttribute(attribute));
     return element; }
+
   var parentCard = findParent(event.target, 'data-card-index'),
       cardIndex = parseInt(parentCard.getAttribute('data-card-index')),
       nextCard = document.querySelector('[data-card-index="' + (cardIndex + 1) + '"]'),
@@ -21,17 +22,19 @@ function cardClick (event) {
                     + (nextCard.getBoundingClientRect().height / 2);
     var transformValue = 'translate(0, calc(50vh - ' + topOffset + 'px))';
     document.querySelector('[data-cards-container]').style.transform = transformValue;
+    nextCard.querySelector('textarea, input').select();
     nextCard.classList.add('visible');
-    nextCard.querySelector('textarea, input').focus();
+    if (callback !== undefined) callback();
   }
 }
 
-document.querySelector('[data-card-index="0"] button').addEventListener('click', cardClick);
-document.querySelector('[data-card-index="1"] button').addEventListener('click', function (event) {
-  cardClick(event);
-  fetchSubmissions(function (results) {
-    log('fetched ' + results.length + ' results:' , results);
-    localStorage['Submissions'] = JSON.stringify(results);
+document.querySelector('[data-card-index="0"] [data-next-action]').addEventListener('click', cardClick);
+document.querySelector('[data-card-index="1"] [data-next-action]').addEventListener('click', function (event) {
+  cardClick(event, function () {
+    fetchSubmissions(function (results) {
+      log('fetched ' + results.length + ' results:' , results);
+      localStorage['Submissions'] = JSON.stringify(results);
+    });
   });
 });
 
@@ -61,7 +64,8 @@ function storeSubmission (data, callback) {
   callback(data, JSON.parse(localStorage['Submissions']));
 }
 
-document.querySelector('[data-card-submit] button').addEventListener('click', function (event) {
+document.querySelector('[data-card-submit] [data-submit-action]').addEventListener('click', function (event) {
+  event.preventDefault();
   event.target.value = "Posting..."
   event.target.disabled = true;
   var name = document.getElementById('name');
@@ -89,3 +93,11 @@ function renderSubmissions (latestSubmission, submissions) {
 
   document.body.appendChild(submissionsContainer);
 }
+
+// setTimeout(
+//   function () {
+//     console.log("do stuff");
+//     renderSubmissions({idealDay: 'foo', today: 'bar', name: 'latest'}, JSON.parse(localStorage['Submissions']))
+//   }
+// , 1200);
+

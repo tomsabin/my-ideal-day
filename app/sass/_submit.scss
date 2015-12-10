@@ -1,13 +1,14 @@
-.question {
-  display: flex;
-  flex-direction: column;
+.submit {
   padding: 20px 0;
 }
 
-.question__label {
-  background-color: white;
+.submit__label {
+  background-color: $green;
+  border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   box-sizing: border-box;
+  color: white;
+  display: block;
   display: block;
   font-family: 'Gentleman Book', sans-serif;
   font-size: 26px;
@@ -15,43 +16,27 @@
   padding: 26px 28px 23px;
   position: relative;
   width: 100%;
-
-  &:before {
-    background: $purple;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    box-sizing: border-box;
-    color: white;
-    counter-increment: questions;
-    content: counter(questions);
-    display: block;
-    font-family: 'Gentleman Bold', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    left: -50px;
-    line-height: 0;
-    padding: 25px 0 23px;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 50px;
-  }
 }
 
-.question__input {
+.submit__container {
+  background-color: white;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  padding: 28px;
+}
+
+.submit__input {
+  background-color: #F7F7F7;
+  border-radius: 8px;
   border: 0;
   box-sizing: border-box;
   color: $gray;
   display: block;
-  font-family: 'Gentleman Light', sans-serif;
+  font-family: 'Gentleman Book', sans-serif;
   font-size: 18px;
-  height: 220px;
-  line-height: 1.2;
-  margin: 0;
+  margin-bottom: 28px;
   outline: 0;
-  padding: 0 28px 20px;
+  padding: 16px 16px 14px;
   resize: none;
   width: 100%;
 
@@ -61,9 +46,8 @@
   }
 }
 
-.question__submit {
-  align-self: flex-end;
-  background: $purple;
+.submit__button {
+  background: $green;
   border-radius: 8px;
   border: 0;
   color: white;
@@ -72,7 +56,7 @@
   font-family: 'Gentleman Bold', sans-serif;
   font-size: 17px;
   line-height: 0;
-  margin-top: 16px;
+  margin: 0 auto;
   outline: 0;
   padding: 25px 0 22px;
   text-transform: uppercase;
@@ -86,12 +70,4 @@
   &:disabled {
     cursor: default;
   }
-}
-
-.question--blue .question__label {
-  color: $blue;
-}
-
-.question--orange .question__label {
-  color: $orange;
 }
