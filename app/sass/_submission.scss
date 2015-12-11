@@ -4,28 +4,19 @@
 }
 
 .submissions__latest .submission {
-  @keyframes latestSubmission {
-    from {
-      transform: translateY(-100vh);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-
   .submission__name {
     transform: translateY(-100vh);
-    animation: latestSubmission 1.25s cubic-bezier(.5, .5, 0, 1) 1.1s forwards;
+    animation: slideIn 1.25s cubic-bezier(.5, .5, 0, 1) 1.1s forwards;
   }
 
   .submission__ideal-day {
     transform: translateY(-100vh);
-    animation: latestSubmission 1.25s cubic-bezier(.5, .5, 0, 1) 1.05s forwards;
+    animation: slideIn 1.25s cubic-bezier(.5, .5, 0, 1) 1.05s forwards;
   }
 
   .submission__today {
     transform: translateY(-100vh);
-    animation: latestSubmission 1.25s cubic-bezier(.5, .5, 0, 1) 1s forwards;
+    animation: slideIn 1.25s cubic-bezier(.5, .5, 0, 1) 1s forwards;
   }
 
   .submission__name {
