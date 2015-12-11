@@ -33,7 +33,7 @@ document.querySelector('[data-card-index="1"] [data-next-action]').addEventListe
   cardClick(event, function () {
     fetchSubmissions(function (results) {
       log('fetched ' + results.length + ' results:' , results);
-      localStorage['Submissions'] = JSON.stringify(results);
+      localStorage.setItem('Submissions', JSON.stringify(results));
     });
   });
 });
@@ -61,7 +61,7 @@ function storeSubmission (data, callback) {
     }
   });
 
-  callback(data, JSON.parse(localStorage['Submissions']));
+  callback(data, JSON.parse(localStorage.getItem('Submissions')));
 }
 
 document.querySelector('[data-card-submit] [data-submit-action]').addEventListener('click', function (event) {
@@ -92,12 +92,15 @@ function renderSubmissions (latestSubmission, submissions) {
 
   submissionsContainer.querySelector('[data-latest-submission]')
     .innerHTML = Mustache.render(template, latestSubmission);
-  submissionsContainer.querySelector('[data-other-submissions]')
-    .innerHTML = Mustache.render(template, submissions);
 
-  var data = [latestSubmission].concat(submissions);
-  log('storing latest submissions: ', data);
-  localStorage['Submissions'] = JSON.stringify(data);
+  if (localStorage.getItem('Submissions') !== null) {
+    submissionsContainer.querySelector('[data-other-submissions]')
+      .innerHTML = Mustache.render(template, submissions);
+
+    var data = [latestSubmission].concat(submissions);
+    log('storing latest submissions: ', data);
+    localStorage.setItem('Submissions', JSON.stringify(data));
+  }
 }
 
 // setTimeout(
