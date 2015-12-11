@@ -1,11 +1,12 @@
 .submission {
   margin: 16px 0;
+  position: relative;
 }
 
-.submission--latest {
+.submissions__latest .submission {
   @keyframes latestSubmission {
     from {
-      transform: translateY(-50vh);
+      transform: translateY(-100vh);
     }
     to {
       transform: translateY(0);
@@ -13,33 +14,33 @@
   }
 
   .submission__name {
-    transform: translateY(-50vh);
-    animation: latestSubmission .8s ease-out 1.1s forwards;
+    transform: translateY(-100vh);
+    animation: latestSubmission 1.25s cubic-bezier(.5, .5, 0, 1) 1.1s forwards;
   }
 
   .submission__ideal-day {
-    transform: translateY(-50vh);
-    animation: latestSubmission .8s ease-out 1.05s forwards;
+    transform: translateY(-100vh);
+    animation: latestSubmission 1.25s cubic-bezier(.5, .5, 0, 1) 1.05s forwards;
   }
 
   .submission__today {
-    transform: translateY(-50vh);
-    animation: latestSubmission .8s ease-out 1s forwards;
+    transform: translateY(-100vh);
+    animation: latestSubmission 1.25s cubic-bezier(.5, .5, 0, 1) 1s forwards;
   }
 
   .submission__name {
-    padding: 12px 32px 10px;
+    padding-left: 22px;
 
     &:before {
       background-color: #FDF336;
       border-radius: 5px;
-      bottom: 4px;
+      bottom: 6px;
       content: "";
       display: block;
-      left: 5px;
+      left: 6px;
       position: absolute;
-      top: 4px;
-      width: 8px;
+      top: 6px;
+      width: 4px;
     }
   }
 }
@@ -51,7 +52,7 @@
   font-family: 'Gentleman Bold', sans-serif;
   font-size: 24px;
   margin-bottom: 16px;
-  padding: 12px 19px 10px;
+  padding: 12px 48px 10px 18px;
   position: relative;
 
   &:after {
@@ -65,6 +66,13 @@
     border-width: 7px 6px 0 6px;
     border-color: $purple transparent transparent transparent;
   }
+}
+
+.submission__emoticon {
+  height: 28px;
+  position: absolute;
+  right: 10px;
+  top: 9px;
 }
 
 %submission__base-bubble {

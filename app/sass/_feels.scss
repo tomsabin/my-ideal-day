@@ -1,0 +1,181 @@
+.feels {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.feels__input {
+  display: none;
+}
+
+.feels__label {
+  background-size: 46px;
+  background-repeat: no-repeat;
+  background-position: center 6px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 20%;
+  border: 12px solid white;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+  padding-top: 60px;
+  border-radius: 18px;
+  padding-bottom: 4px;
+  font-family: 'Gentleman Book', sans-serif;
+}
+
+.feels__input[value="bored"] {
+  $primary-color: #EFAFD5;
+
+  & + .feels__label {
+    background-image: url('images/bored.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/bored_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.feels__input[value="surprised"] {
+  $primary-color: #7FCCDF;
+
+  & + .feels__label {
+    background-image: url('images/surprised.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/surprised_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.feels__input[value="joyful"] {
+  $primary-color: #FCBE4F;
+
+  & + .feels__label {
+    background-image: url('images/joyful.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/joyful_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.feels__input[value="fearful"] {
+  $primary-color: #51C57F;
+
+  & + .feels__label {
+    background-image: url('images/fearful.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/fearful_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.feels__input[value="angry"] {
+  $primary-color: #FA4649;
+
+  & + .feels__label {
+    background-image: url('images/angry.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/angry_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.feels__input[value="serene"] {
+  $primary-color: #FEE37D;
+
+  & + .feels__label {
+    background-image: url('images/serene.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/serene_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.feels__input[value="annoyed"] {
+  $primary-color: #FA6A45;
+
+  & + .feels__label {
+    background-image: url('images/annoyed.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/annoyed_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.feels__input[value="sad"] {
+  $primary-color: #3095CF;
+
+  & + .feels__label {
+    background-image: url('images/sad.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/sad_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+
+}
+.feels__input[value="pensive"] {
+  $primary-color: #C192E3;
+
+  & + .feels__label {
+    background-image: url('images/pensive.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/pensive_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.feels__input[value="accepting"] {
+  $primary-color: #8EC662;
+
+  & + .feels__label {
+    background-image: url('images/accepting.png');
+    color: $primary-color;
+  }
+
+  &:checked + .feels__label {
+    background-image: url('images/accepting_w.png');
+    background-color: $primary-color;
+    color: white;
+  }
+}

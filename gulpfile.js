@@ -26,6 +26,6 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
   gulp.watch('app/sass/**/*.scss', ['sass'])
   gulp.watch('app/*.html', browserSync.reload);
   gulp.watch('app/*.js', browserSync.reload);
-})
+});
 
 gulp.task('default', ['watch']);

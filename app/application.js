@@ -1,4 +1,4 @@
-Parse.initialize("rrO5aXvISmgK4bTu6gpeHuBiDyyFN8GgIxdCN9n0", "99k6qUikX2iAS36k1MmT9aTeuDtUKJkvgF42HZvQ");
+Parse.initialize("XnG27Mf7YQqvPruZ4E9Teb9A3aZjKF27M9A4N1NG", "6dp7f8DsEerSTdQnWzK83JuAbrXA7mRx3tuJN44C");
 Submission = Parse.Object.extend("Submission");
 
 function log (message, object) {
@@ -68,11 +68,13 @@ document.querySelector('[data-card-submit] [data-submit-action]').addEventListen
   event.preventDefault();
   event.target.value = "Posting..."
   event.target.disabled = true;
-  var name = document.getElementById('name');
+  var name = document.getElementById('name'),
+      feels = document.querySelector('input[name="feels"]:checked');
   name.disabled = true;
   storeSubmission({
-    idealDay: document.getElementById('idealDay').value,
+    ideal: document.getElementById('idealDay').value,
     today: document.getElementById('dayToday').value,
+    feel: feels !== null ? feels.value : '',
     name: name.value
   }, renderSubmissions);
 });
@@ -83,21 +85,27 @@ function renderSubmissions (latestSubmission, submissions) {
   cardsContainer.style.opacity = '0';
   cardsContainer.style.height = '0';
 
-  var submissionsContainer = document.createElement('div');
-  submissionsContainer.className = 'submissions';
+  var submissionsContainer = document.querySelector('[data-submissions-container]');
+  submissionsContainer.style.display = 'block';
 
-  latestSubmission['latestSubmissionClass'] = 'submission--latest';
   var template = document.getElementById('submissionTemplate').innerHTML;
-  var view = [latestSubmission].concat(submissions);
-  submissionsContainer.innerHTML = Mustache.render(template, view);
 
-  document.body.appendChild(submissionsContainer);
+  submissionsContainer.querySelector('[data-latest-submission]')
+    .innerHTML = Mustache.render(template, latestSubmission);
+  submissionsContainer.querySelector('[data-other-submissions]')
+    .innerHTML = Mustache.render(template, submissions);
+
+  var data = [latestSubmission].concat(submissions);
+  log('storing latest submissions: ', data);
+  localStorage['Submissions'] = JSON.stringify(data);
 }
 
 // setTimeout(
 //   function () {
 //     console.log("do stuff");
-//     renderSubmissions({idealDay: 'foo', today: 'bar', name: 'latest'}, JSON.parse(localStorage['Submissions']))
+//     var latest = {ideal: 'ideal day', today: 'today', name: 'latest', feel: 'angry'};
+//     var data = {ideal: 'ideal day', today: 'today', name: 'name', feel: 'joyful'};
+//     renderSubmissions(latest, [data, data])
 //   }
 // , 1200);
 

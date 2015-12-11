@@ -17,20 +17,27 @@ body {
   overflow: hidden;
 }
 
-$cardHeight: 370px;
+$questionHeight: 370px;
 
 .questions {
   height: 100%;
-  transform: translate(0, calc(50vh - #{$cardHeight / 2}));
+  transform: translate(0, calc(50vh - #{$questionHeight / 2}));
   transition: 1s;
 }
 
-.card {
-  height: $cardHeight;
+.submissions {
+  display: none;
 }
 
-.card,
-.card--submit {
+.question {
+  height: $questionHeight;
+}
+
+.question--submit {
+  height: 530px;
+}
+
+.card {
   opacity: 0;
   transition: 1s ease-in-out;
 
@@ -42,6 +49,7 @@ $cardHeight: 370px;
 @import 'background_video';
 @import 'questions';
 @import 'question';
+@import 'feels';
 @import 'submit';
 @import 'submissions';
 @import 'submission';
