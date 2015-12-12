@@ -21,18 +21,6 @@
 
   .submission__name {
     padding-left: 22px;
-
-    &:before {
-      background-color: #FDF336;
-      border-radius: 5px;
-      bottom: 6px;
-      content: "";
-      display: block;
-      left: 6px;
-      position: absolute;
-      top: 6px;
-      width: 4px;
-    }
   }
 }
 
@@ -56,6 +44,17 @@
     border-style: solid;
     border-width: 7px 6px 0 6px;
     border-color: $purple transparent transparent transparent;
+  }
+
+  &:before {
+    border-radius: 5px;
+    bottom: 6px;
+    content: "";
+    display: block;
+    left: 6px;
+    position: absolute;
+    top: 6px;
+    width: 4px;
   }
 }
 
@@ -94,7 +93,47 @@
   @extend %submission__base-bubble;
 
   &:before {
-    content: "My day today is ";
+    content: "Today, I  ";
     color: $orange;
   }
+}
+
+.submission--bored .submission__name:before {
+  background-color: #EFAFD5;
+}
+
+.submission--surprised .submission__name:before {
+  background-color: #7FCCDF;
+}
+
+.submission--joyful .submission__name:before {
+  background-color: #FCBE4F;
+}
+
+.submission--fearful .submission__name:before {
+  background-color: #51C57F;
+}
+
+.submission--angry .submission__name:before {
+  background-color: #FA4649;
+}
+
+.submission--serene .submission__name:before {
+  background-color: #FEE37D;
+}
+
+.submission--annoyed .submission__name:before {
+  background-color: #FA6A45;
+}
+
+.submission--sad .submission__name:before {
+  background-color: #3095CF;
+}
+
+.submission--pensive .submission__name:before {
+  background-color: #C192E3;
+}
+
+.submission--accepting .submission__name:before {
+  background-color: #8EC662;
 }

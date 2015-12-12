@@ -133,7 +133,7 @@ document.querySelector('[data-connection-action]').addEventListener('click', fun
         event.target.value = 'Submitted!';
         setTimeout(function () {
           document.querySelector('[data-connection]').classList.add('connection--hidden');
-        }, 1000);
+        }, 750);
       },
       error: function(error) {
         log('(2/2) error while trying to save connection.', error);
@@ -142,11 +142,22 @@ document.querySelector('[data-connection-action]').addEventListener('click', fun
   }
 });
 
-setTimeout(
-  function () {
-    console.log("do stuff");
-    var latest = {attributes: {ideal: 'ideal day', today: 'today', name: 'latest', feel: 'angry'}};
-    var data = {ideal: 'ideal day', today: 'today', name: 'name', feel: 'joyful'};
-    renderSubmissions(latest, [data, data])
-  }
-, 1200);
+// setTimeout(
+//   function () {
+//     console.log("do stuff");
+//     var latest = {attributes: {ideal: 'ideal day', today: 'today', name: 'latest', feel: 'angry'}};
+//     var data = [
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'bored' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'surprised' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'joyful' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'fearful' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'angry' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'serene' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'annoyed' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'sad' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'pensive' },
+//       { ideal: 'ideal', today:' today', name: 'name', feel: 'accepting' }
+//     ];
+//     renderSubmissions(latest, data)
+//   }
+// , 1200);

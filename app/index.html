@@ -31,7 +31,10 @@
           Hello :)
         </div>
         <div class="intro__subtitle">
-          We'd like to ask you <span>2 questions:</span>
+          Where would you like to be?
+        </div>
+        <div class="intro__hint">
+          (I'm only 2 questions)
         </div>
       </div>
 
@@ -139,7 +142,7 @@
 
     <script id="submissionTemplate" type="text/mustache">
       {{ #. }}
-        <div class="submission">
+        <div class="submission submission--{{ feel }}">
           <div class="submission__name">
             {{ #name }}
               {{ name }} says:

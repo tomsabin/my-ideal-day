@@ -2,7 +2,7 @@
   position: absolute;
   text-align: center;
   color: $purple;
-  top: -110px;
+  top: -120px;
   margin-left: 40px;
 }
 
@@ -14,10 +14,12 @@
 
 .intro__subtitle {
   font-family: 'Gentleman Book', sans-serif;
+  margin-top: 4px;
   font-size: 24px;
-  margin-top: 16px;
+}
 
-  span {
-    font-weight: 600;
-  }
+.intro__hint {
+  font-family: 'Gentleman Book', sans-serif;
+  margin-top: 10px;
+  font-size: 16px;
 }

@@ -57,10 +57,15 @@ $questionHeight: 370px;
 
 .intro__title {
   transform: translateY(-100vh);
-  animation: slideIn 1.25s cubic-bezier(.5, .5, 0, 1) .3s forwards;
+  animation: slideIn 1.25s cubic-bezier(.5, .5, 0, 1) .4s forwards;
 }
 
 .intro__subtitle {
+  transform: translateY(-100vh);
+  animation: slideIn 1.25s cubic-bezier(.5, .5, 0, 1) .3s forwards;
+}
+
+.intro__hint {
   transform: translateY(-100vh);
   animation: slideIn 1.25s cubic-bezier(.5, .5, 0, 1) .2s forwards;
 }
