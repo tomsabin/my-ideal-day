@@ -57,7 +57,7 @@ body {
 .questions {
   height: 100%;
   transform: translate(0, calc(50vh - 185px));
-  transition: 1s; }
+  transition: 1s ease-in-out; }
 
 .submissions {
   display: none; }
@@ -128,6 +128,11 @@ body {
   max-width: 500px;
   padding-left: 46px;
   position: relative; }
+
+.questions--hidden {
+  opacity: 0;
+  height: 0;
+  transform: translate(0, -200vh); }
 
 .question {
   box-sizing: border-box;
@@ -369,7 +374,6 @@ body {
   margin-bottom: 28px;
   outline: 0;
   padding: 16px 16px 14px;
-  resize: none;
   width: 100%; }
   .submit__input:disabled {
     background-color: #F7F7F7;
@@ -409,6 +413,9 @@ body {
   padding: 40px 0;
   box-sizing: border-box;
   max-width: 500px; }
+
+.submissions__latest {
+  z-index: 2; }
 
 .submission {
   margin: 16px 0;
@@ -485,3 +492,100 @@ body {
 .submission__today:before {
   content: "My day today is ";
   color: #faaa4c; }
+
+.connection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 324px;
+  opacity: 1;
+  box-sizing: border-box;
+  position: relative;
+  transition: 1s ease-in-out; }
+
+.connection--hidden {
+  opacity: 0;
+  height: 0;
+  transform: translate(0, -200vh); }
+
+.connection__label {
+  background-color: #666666;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  display: block;
+  font-family: 'Gentleman Light', sans-serif;
+  font-size: 22px;
+  line-height: 1.1;
+  padding: 18px 18px 16px;
+  position: relative;
+  width: 100%; }
+  .connection__label b {
+    font-family: 'Gentleman Book', sans-serif; }
+  .connection__label strong {
+    font-family: 'Gentleman Bold', sans-serif; }
+
+.connection__close {
+  -webkit-user-select: none;
+  background-color: white;
+  border-radius: 50%;
+  color: #666666;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 0;
+  padding: 11px 4.5px 9px 5px;
+  position: absolute;
+  right: -5px;
+  top: 11px; }
+
+.connection__container {
+  background-color: white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: #666666;
+  font-family: 'Gentleman Book', sans-serif;
+  font-size: 22px;
+  padding: 18px; }
+
+.connection__input {
+  background-color: #F7F7F7;
+  border-radius: 8px;
+  border: 0;
+  box-sizing: border-box;
+  color: #666666;
+  display: block;
+  font-family: 'Gentleman Book', sans-serif;
+  font-size: 18px;
+  margin: 12px 0 18px;
+  outline: 0;
+  padding: 16px 16px 14px;
+  width: 100%; }
+  .connection__input:disabled {
+    background-color: #F7F7F7;
+    color: inherit; }
+  .connection__input:-webkit-autofill {
+    -webkit-text-fill-color: #666666;
+    -webkit-box-shadow: 0 0 0px 1000px #F7F7F7 inset; }
+
+.connection__button {
+  background: #6DD468;
+  border-radius: 8px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: 'Gentleman Bold', sans-serif;
+  font-size: 17px;
+  line-height: 0;
+  margin: 0 auto;
+  outline: 0;
+  padding: 25px 0 22px;
+  text-transform: uppercase;
+  width: 45%; }
+  .connection__button:not(:disabled):focus, .connection__button:not(:disabled):hover {
+    background: #714ba5; }
+  .connection__button:disabled {
+    cursor: default; }

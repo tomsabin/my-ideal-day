@@ -6,3 +6,9 @@
   padding-left: 46px;
   position: relative;
 }
+
+.questions--hidden {
+  opacity: 0;
+  height: 0;
+  transform: translate(0, -200vh);
+}

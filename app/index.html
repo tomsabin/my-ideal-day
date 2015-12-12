@@ -103,7 +103,7 @@
             </label>
             <div class="submit__container">
               <input class="submit__input" id="name" type="text" placeholder="Your name (optional)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="-1">
-              <input class="submit__button" type="submit" value="Post" data-submit-action tabindex="-1">
+              <input class="submit__button" type="submit" value="Post" tabindex="-1" data-submit-action>
             </div>
           </div>
         </div>
@@ -116,6 +116,21 @@
       <div class="submissions__container">
         <div class="submissions__latest" data-latest-submission>
         </div>
+
+        <div class="connection" data-connection>
+          <label class="connection__label" for="name">
+            We’re launching a <b>platform</b> to connect you to <b>opportunities</b> and <b>conversations</b> that will help you <strong>make positive changes</strong> in your life.
+          </label>
+          <div class="connection__close" data-connection-close>
+            &#10005;
+          </div>
+          <form action="" class="connection__container">
+            Let me know when it launches:
+            <input class="connection__input" type="email" id="email" placeholder="Your email address" required>
+            <input class="connection__button" type="submit" value="Submit" data-connection-action>
+          </form>
+        </div>
+
         <div data-other-submissions>
         </div>
       </div>

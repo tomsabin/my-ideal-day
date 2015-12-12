@@ -1,5 +1,6 @@
-Parse.initialize("XnG27Mf7YQqvPruZ4E9Teb9A3aZjKF27M9A4N1NG", "6dp7f8DsEerSTdQnWzK83JuAbrXA7mRx3tuJN44C");
-Submission = Parse.Object.extend("Submission");
+Parse.initialize('XnG27Mf7YQqvPruZ4E9Teb9A3aZjKF27M9A4N1NG', '6dp7f8DsEerSTdQnWzK83JuAbrXA7mRx3tuJN44C');
+Submission = Parse.Object.extend('Submission');
+Connection = Parse.Object.extend('Connection');
 
 function log (message, object) {
   console.log(new Date().getTime(), message, object);
@@ -38,7 +39,6 @@ document.querySelector('[data-card-index="1"] [data-next-action]').addEventListe
   });
 });
 
-
 function fetchSubmissions (callback) {
   var query = new Parse.Query(Submission);
   query.descending("createdAt").find({
@@ -49,10 +49,10 @@ function fetchSubmissions (callback) {
   });
 }
 
-function storeSubmission (data, callback) {
-  log('(1/2) saving submission to Parse: ', data);
+function storeSubmission (submission, callback) {
+  log('(1/2) saving submission to Parse: ', submission.attributes);
 
-  new Submission().save(data, {
+  submission.save(null, {
     success: function() {
       log('(2/2) successfully saved latest submission.');
     },
@@ -61,7 +61,8 @@ function storeSubmission (data, callback) {
     }
   });
 
-  callback(data, JSON.parse(localStorage.getItem('Submissions')));
+  localStorage.setItem('LatestSubmission', JSON.stringify(submission.attributes));
+  callback(submission, JSON.parse(localStorage.getItem('Submissions')));
 }
 
 document.querySelector('[data-card-submit] [data-submit-action]').addEventListener('click', function (event) {
@@ -71,19 +72,17 @@ document.querySelector('[data-card-submit] [data-submit-action]').addEventListen
   var name = document.getElementById('name'),
       feels = document.querySelector('input[name="feels"]:checked');
   name.disabled = true;
-  storeSubmission({
-    ideal: document.getElementById('idealDay').value,
-    today: document.getElementById('dayToday').value,
-    feel: feels !== null ? feels.value : '',
-    name: name.value
-  }, renderSubmissions);
+
+  var submission = new Submission();
+  submission.set('name', name.value);
+  submission.set('ideal', document.getElementById('idealDay').value);
+  submission.set('today', document.getElementById('dayToday').value);
+  submission.set('feel', feels !== null ? feels.value : '');
+  storeSubmission(submission, renderSubmissions);
 });
 
 function renderSubmissions (latestSubmission, submissions) {
-  var cardsContainer = document.querySelector('[data-cards-container]');
-  cardsContainer.style.transform = 'translate(0, -200vh)';
-  cardsContainer.style.opacity = '0';
-  cardsContainer.style.height = '0';
+  document.querySelector('[data-cards-container]').classList.add('questions--hidden');
 
   var submissionsContainer = document.querySelector('[data-submissions-container]');
   submissionsContainer.style.display = 'block';
@@ -91,7 +90,7 @@ function renderSubmissions (latestSubmission, submissions) {
   var template = document.getElementById('submissionTemplate').innerHTML;
 
   submissionsContainer.querySelector('[data-latest-submission]')
-    .innerHTML = Mustache.render(template, latestSubmission);
+    .innerHTML = Mustache.render(template, latestSubmission.attributes);
 
   if (localStorage.getItem('Submissions') !== null) {
     submissionsContainer.querySelector('[data-other-submissions]')
@@ -103,12 +102,51 @@ function renderSubmissions (latestSubmission, submissions) {
   }
 }
 
-// setTimeout(
-//   function () {
-//     console.log("do stuff");
-//     var latest = {ideal: 'ideal day', today: 'today', name: 'latest', feel: 'angry'};
-//     var data = {ideal: 'ideal day', today: 'today', name: 'name', feel: 'joyful'};
-//     renderSubmissions(latest, [data, data])
-//   }
-// , 1200);
+document.querySelector('[data-connection-close]').addEventListener('click', function (event) {
+  document.querySelector('[data-connection]').classList.add('connection--hidden');
+});
 
+document.querySelector('[data-connection-action]').addEventListener('click', function (event) {
+  event.preventDefault();
+
+  var email = document.getElementById('email');
+  if (email.value !== '' ) {
+    event.target.value = 'Submitting...';
+    event.target.disabled = true;
+    email.disabled = true;
+
+    var connection = new Connection();
+    var submission = JSON.parse(localStorage.getItem('LatestSubmission'));
+    var data = {
+      name: submission.name,
+      email: email.value,
+      ideal: submission.ideal,
+      today: submission.today,
+      feel: submission.feel
+    };
+
+    log('(1/2) saving connection to Parse: ', data);
+
+    connection.save(data, {
+      success: function() {
+        log('(2/2) successfully saved connection.');
+        event.target.value = 'Submitted!';
+        setTimeout(function () {
+          document.querySelector('[data-connection]').classList.add('connection--hidden');
+        }, 1000);
+      },
+      error: function(error) {
+        log('(2/2) error while trying to save connection.', error);
+      }
+    });
+  }
+});
+
+setTimeout(
+  function () {
+    console.log("do stuff");
+    var latest = {attributes: {ideal: 'ideal day', today: 'today', name: 'latest', feel: 'angry'}};
+    var data = {ideal: 'ideal day', today: 'today', name: 'name', feel: 'joyful'};
+    renderSubmissions(latest, [data, data])
+  }
+, 1200);
