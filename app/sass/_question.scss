@@ -7,17 +7,18 @@
 
 .question__label {
   background-color: white;
-  border-top-right-radius: 8px;
-  box-sizing: border-box;
   display: block;
   font-family: 'Gentleman Book', sans-serif;
   font-size: 26px;
-  line-height: 0;
-  padding: 26px 28px 23px;
+  line-height: 1.1;
+  padding: 12px 28px;
   position: relative;
-  width: 100%;
 
-  &:before {
+  &:not(.question__label--contained) {
+    border-top-right-radius: 8px;
+  }
+
+  &:not(.question__label--contained):before {
     background: $purple;
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;

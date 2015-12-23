@@ -64,7 +64,19 @@
 
       <div class="card" data-card-index="2" data-card-submit>
         <div class="question question--submit question--purple">
-          <label class="question__label" for="dayToday">
+          <label class="question__label">
+            How far is your ideal day from your current day?
+          </label>
+
+          <div class="lifegap">
+            <img class="lifegap__min" src="images/heart--broken.png" alt="hate">
+            <div class="lifegap__range-container">
+              <input class="lifegap__range" id="lifeGap" type="range" name="points" min="0" max="6">
+            </div>
+            <img class="lifegap__max" src="images/heart.png" alt="love">
+          </div>
+
+          <label class="question__label question__label--contained">
             How do you feel about this?
           </label>
 
@@ -106,7 +118,7 @@
             </label>
             <div class="submit__container">
               <input class="submit__input" id="name" type="text" placeholder="Your name (optional)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="-1">
-              <input class="submit__button" type="submit" value="Post" tabindex="-1" data-submit-action>
+              <input class="submit__button" type="submit" value="Share" tabindex="-1" data-submit-action>
             </div>
           </div>
         </div>
@@ -145,23 +157,47 @@
         <div class="submission submission--{{ feel }}">
           <div class="submission__name">
             {{ #name }}
-              {{ name }} says:
+              {{ name }}
             {{ /name }}
 
             {{ ^name }}
-              Anonymous says:
+              Anonymous
             {{ /name }}
+          </div>
+          <div class="submission__text">
+            <div class="submission__ideal-day">
+              {{ ideal }}
+            </div>
 
-            {{ #feel }}
-              <img class="submission__emoticon" src="images/{{ feel }}.png" alt="{{ feel }}" />
-            {{ /feel }}
+            <div class="submission__today">
+              {{ today }}
+            </div>
           </div>
-          <div class="submission__ideal-day">
-            {{ ideal }}
-          </div>
-          <div class="submission__today">
-            {{ today }}
-          </div>
+
+          {{ #lifegap }}
+            <div class="submission__lifegap">
+              <div class="submission__lifegap-label">
+                Lifegap:
+              </div>
+              <div class="submission__lifegap-content">
+                <img class="submission__lifegap-min" src="images/heart--broken.png" alt="hate" />
+                <progress class="submission__lifegap-progress" value="{{ lifegap }}" max="6"></progress>
+                <img class="submission__lifegap-max" src="images/heart.png" alt="love" />
+              </div>
+            </div>
+          {{ /lifegap }}
+
+          {{ #feel }}
+            <div class="submission__feels">
+              <div class="submission__feels-label">
+                Feels:
+              </div>
+              <div class="submission__feels-content">
+                <img class="submission__emoticon" src="images/{{ feel }}.png" alt="{{ feel }}" />
+                {{ feel }}
+              </div>
+            </div>
+          {{ /feel }}
         </div>
       {{ /. }}
     </script>

@@ -17,24 +17,14 @@ body {
   overflow: hidden;
 }
 
-$questionHeight: 370px;
-
 .questions {
   height: 100%;
-  transform: translate(0, calc(50vh - #{$questionHeight / 2}));
+  transform: translate(0, calc(50vh - 140px));
   transition: 1s ease-in-out;
 }
 
 .submissions {
   display: none;
-}
-
-.question {
-  height: $questionHeight;
-}
-
-.question--submit {
-  height: 530px;
 }
 
 .card {
@@ -79,6 +69,7 @@ $questionHeight: 370px;
 @import 'intro';
 @import 'questions';
 @import 'question';
+@import 'lifegap';
 @import 'feels';
 @import 'submit';
 @import 'submissions';
