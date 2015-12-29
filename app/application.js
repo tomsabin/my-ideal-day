@@ -108,14 +108,14 @@ function renderSubmissions (latestSubmission, submissions) {
     var data = [latestSubmission].concat(submissions);
     log('storing latest submissions: ', data);
     localStorage.setItem('Submissions', JSON.stringify(data));
-    createShareIcon(latestSubmission);
+    createShareIcon(latestSubmission.attributes);
   }
 }
 
 function createShareIcon (submission) {
-  var link = 'https://www.facebook.com/dialog/share?app_id=1042614292427958&href=http://my-ideal-day.co/&redirect_uri=http://my-ideal-day.co/';
-  link += '&picture=http://my-ideal-day.co/images/share/' + submission.attributes.feel + '.jpg';
-  link += '&title=I explored my life gap and I am ' + submission.attributes.feel.toUpperCase();
+  var link = 'https://www.facebook.com/dialog/share?app_id=1042614292427958&href=http://my-ideal-day.co/&redirect_uri=http://www.facebook.com';
+  link += '&picture=http://my-ideal-day.co/images/share/' + submission.feel + '.jpg';
+  link += '&title=I explored my life gap and I am ' + submission.feel.toUpperCase();
   document.getElementById('facebookShare').href = link;
 }
 
