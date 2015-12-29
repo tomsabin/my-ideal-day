@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>My Ideal Day</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="application.css">
-    <script src="vendor/parse.min.js"></script>
-    <script src="vendor/mustache.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/application.css">
+    <script src="assets/vendor/parse.min.js"></script>
+    <script src="assets/vendor/mustache.min.js"></script>
     <script type="text/javascript">
       (function() {
         var path = '//easy.myfonts.net/v2/js?&sid=249134(font-family=Gentleman+Light)&sid=249135(font-family=Gentleman+Book)&sid=249138(font-family=Gentleman+Bold)&key=DElnFXZut8',
@@ -36,7 +36,7 @@
       }}();
     </script>
   <body>
-    <video src="background.mp4" autoplay loop poster="background.jpg" class="background-video"></video>
+    <video src="assets/background.mp4" autoplay loop poster="assets/images/background.jpg" class="background-video"></video>
 
     <div class="questions" data-cards-container>
 
@@ -83,11 +83,11 @@
           </label>
 
           <div class="lifegap">
-            <img class="lifegap__min" src="images/heart--broken.png" alt="hate">
+            <img class="lifegap__min" src="assets/images/heart--broken.png" alt="hate">
             <div class="lifegap__range-container">
               <input class="lifegap__range" id="lifeGap" type="range" name="points" min="0" max="6">
             </div>
-            <img class="lifegap__max" src="images/heart.png" alt="love">
+            <img class="lifegap__max" src="assets/images/heart.png" alt="love">
           </div>
 
           <label class="question__label question__label--contained">
@@ -180,7 +180,7 @@
           </div>
           {{ #latest }}
             <a href="#" class="submission__social-link" title="Share on Facebook" id="facebookShare" target="_blank">
-              <img src="images/facebook.png" alt="Share on Facebook" class="submission__social-image" />
+              <img src="assets/images/facebook.png" alt="Share on Facebook" class="submission__social-image" />
             </a>
           {{ /latest }}
           <div class="submission__text">
@@ -199,9 +199,9 @@
                 Lifegap:
               </div>
               <div class="submission__lifegap-content">
-                <img class="submission__lifegap-min" src="images/heart--broken.png" alt="hate" />
+                <img class="submission__lifegap-min" src="assets/images/heart--broken.png" alt="hate" />
                 <progress class="submission__lifegap-progress" value="{{ lifegap }}" max="6"></progress>
-                <img class="submission__lifegap-max" src="images/heart.png" alt="love" />
+                <img class="submission__lifegap-max" src="assets/images/heart.png" alt="love" />
               </div>
             </div>
           {{ /lifegap }}
@@ -212,7 +212,7 @@
                 Feels:
               </div>
               <div class="submission__feels-content">
-                <img class="submission__emoticon" src="images/{{ feel }}.png" alt="{{ feel }}" />
+                <img class="submission__emoticon" src="assets/images/feel/{{ feel }}.png" alt="{{ feel }}" />
                 {{ feel }}
               </div>
             </div>
@@ -220,6 +220,6 @@
         </div>
       {{ /. }}
     </script>
-    <script src="application.js"></script>
+    <script src="assets/application.js"></script>
   </body>
 </html>

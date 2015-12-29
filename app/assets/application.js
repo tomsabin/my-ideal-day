@@ -114,7 +114,7 @@ function renderSubmissions (latestSubmission, submissions) {
 
 function createShareIcon (submission) {
   var link = 'https://www.facebook.com/dialog/share?app_id=1042614292427958&href=http://my-ideal-day.co/&redirect_uri=http://www.facebook.com';
-  link += '&picture=http://my-ideal-day.co/images/share/' + submission.feel + '.jpg';
+  link += '&picture=http://my-ideal-day.co/assets/images/share/' + submission.feel + '.jpg';
   link += '&title=I explored my life gap and I am ' + submission.feel.toUpperCase();
   document.getElementById('facebookShare').href = link;
 }

@@ -34,12 +34,12 @@
   $primary-color: #EFAFD5;
 
   & + .feels__label {
-    background-image: url('images/bored.png');
+    background-image: url('images/feel/bored.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/bored_w.png');
+    background-image: url('images/feel/bored_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -49,12 +49,12 @@
   $primary-color: #7FCCDF;
 
   & + .feels__label {
-    background-image: url('images/surprised.png');
+    background-image: url('images/feel/surprised.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/surprised_w.png');
+    background-image: url('images/feel/surprised_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -64,12 +64,12 @@
   $primary-color: #FCBE4F;
 
   & + .feels__label {
-    background-image: url('images/joyful.png');
+    background-image: url('images/feel/joyful.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/joyful_w.png');
+    background-image: url('images/feel/joyful_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -79,12 +79,12 @@
   $primary-color: #51C57F;
 
   & + .feels__label {
-    background-image: url('images/fearful.png');
+    background-image: url('images/feel/fearful.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/fearful_w.png');
+    background-image: url('images/feel/fearful_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -94,12 +94,12 @@
   $primary-color: #FA4649;
 
   & + .feels__label {
-    background-image: url('images/angry.png');
+    background-image: url('images/feel/angry.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/angry_w.png');
+    background-image: url('images/feel/angry_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -109,12 +109,12 @@
   $primary-color: #FEE37D;
 
   & + .feels__label {
-    background-image: url('images/serene.png');
+    background-image: url('images/feel/serene.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/serene_w.png');
+    background-image: url('images/feel/serene_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -124,12 +124,12 @@
   $primary-color: #FA6A45;
 
   & + .feels__label {
-    background-image: url('images/annoyed.png');
+    background-image: url('images/feel/annoyed.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/annoyed_w.png');
+    background-image: url('images/feel/annoyed_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -139,12 +139,12 @@
   $primary-color: #3095CF;
 
   & + .feels__label {
-    background-image: url('images/sad.png');
+    background-image: url('images/feel/sad.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/sad_w.png');
+    background-image: url('images/feel/sad_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -154,12 +154,12 @@
   $primary-color: #C192E3;
 
   & + .feels__label {
-    background-image: url('images/pensive.png');
+    background-image: url('images/feel/pensive.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/pensive_w.png');
+    background-image: url('images/feel/pensive_w.png');
     background-color: $primary-color;
     color: white;
   }
@@ -169,12 +169,12 @@
   $primary-color: #8EC662;
 
   & + .feels__label {
-    background-image: url('images/accepting.png');
+    background-image: url('images/feel/accepting.png');
     color: $primary-color;
   }
 
   &:checked + .feels__label {
-    background-image: url('images/accepting_w.png');
+    background-image: url('images/feel/accepting_w.png');
     background-color: $primary-color;
     color: white;
   }
