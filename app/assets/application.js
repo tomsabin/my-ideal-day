@@ -96,14 +96,15 @@ function renderSubmissions (latestSubmission, submissions) {
 
   var template = document.getElementById('submissionTemplate').innerHTML;
 
-  var latestView = latestSubmission.attributes;
-  latestView.latest = true;
   submissionsContainer.querySelector('[data-latest-submission]')
-    .innerHTML = Mustache.render(template, latestView);
+    .innerHTML = Mustache.render(template, {
+      submissions: latestSubmission.attributes,
+      latest: true
+    });
 
   if (localStorage.getItem('Submissions') !== null) {
     submissionsContainer.querySelector('[data-other-submissions]')
-      .innerHTML = Mustache.render(template, submissions);
+      .innerHTML = Mustache.render(template, { submissions: submissions });
 
     var data = [latestSubmission].concat(submissions);
     log('storing latest submissions: ', data);
