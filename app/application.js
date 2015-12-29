@@ -90,8 +90,10 @@ function renderSubmissions (latestSubmission, submissions) {
 
   var template = document.getElementById('submissionTemplate').innerHTML;
 
+  var latestView = latestSubmission.attributes;
+  latestView.latest = true;
   submissionsContainer.querySelector('[data-latest-submission]')
-    .innerHTML = Mustache.render(template, latestSubmission.attributes);
+    .innerHTML = Mustache.render(template, latestView);
 
   if (localStorage.getItem('Submissions') !== null) {
     submissionsContainer.querySelector('[data-other-submissions]')
@@ -108,7 +110,7 @@ function createShareIcon (submission) {
   var link = 'https://www.facebook.com/dialog/share?app_id=1042614292427958&href=http://my-ideal-day.co/&redirect_uri=http://my-ideal-day.co/';
   link += '&picture=http://my-ideal-day.co/images/share/' + submission.attributes.feel + '.jpg';
   link += '&title=I explored my life gap and I am ' + submission.attributes.feel.toUpperCase();
-  // document.getElementById('facebookShare').href = link;
+  document.getElementById('facebookShare').href = link;
 }
 
 document.querySelector('[data-connection-close]').addEventListener('click', function (event) {

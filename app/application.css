@@ -455,7 +455,8 @@ body {
   z-index: 2; }
 
 .submission {
-  margin: 50px 0; }
+  margin: 50px 0;
+  position: relative; }
   .submission *:first-of-type {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px; }
@@ -475,6 +476,14 @@ body {
   font-size: 24px;
   padding: 12px 18px 10px;
   position: relative; }
+
+.submission__social-link {
+  position: absolute;
+  right: 9px;
+  top: 9px; }
+
+.submission__social-image {
+  width: 28px; }
 
 .submission__text {
   background-color: white;
