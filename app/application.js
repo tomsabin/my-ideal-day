@@ -1,6 +1,7 @@
 Parse.initialize('XnG27Mf7YQqvPruZ4E9Teb9A3aZjKF27M9A4N1NG', '6dp7f8DsEerSTdQnWzK83JuAbrXA7mRx3tuJN44C');
 Submission = Parse.Object.extend('Submission');
 Connection = Parse.Object.extend('Connection');
+analytics.track('Visited site');
 
 function log (message, object) {
   console.log(new Date().getTime(), message, object);
@@ -25,6 +26,9 @@ function cardClick (event, callback) {
     document.querySelector('[data-cards-container]').style.transform = transformValue;
     nextCard.querySelector('textarea, input').select();
     nextCard.classList.add('visible');
+
+    analytics.track('Clicked: ' + parentCard.querySelector('label').textContent.trim());
+
     if (callback !== undefined) callback();
   }
 }
@@ -80,6 +84,8 @@ document.querySelector('[data-card-submit] [data-submit-action]').addEventListen
   submission.set('lifegap', document.getElementById('lifeGap').value);
   submission.set('feel', feels !== null ? feels.value : '');
   storeSubmission(submission, renderSubmissions);
+
+  analytics.track('Clicked: Lets finish');
 });
 
 function renderSubmissions (latestSubmission, submissions) {
