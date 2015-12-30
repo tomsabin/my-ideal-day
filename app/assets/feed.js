@@ -1,10 +1,10 @@
 analytics.track('Visited feed');
 
-document.querySelector('[data-connection-close]').addEventListener('click', function (event) {
-  document.querySelector('[data-connection]').classList.add('connection--hidden');
+document.querySelector('[data-email-capture-close]').addEventListener('click', function (event) {
+  document.querySelector('[data-email-capture]').classList.add('email-capture--hidden');
 });
 
-document.querySelector('[data-connection-action]').addEventListener('click', function (event) {
+document.querySelector('[data-email-capture-action]').addEventListener('click', function (event) {
   event.preventDefault();
 
   var email = document.getElementById('email');
@@ -30,7 +30,7 @@ document.querySelector('[data-connection-action]').addEventListener('click', fun
         log('(2/2) successfully saved connection.');
         event.target.value = 'Submitted!';
         setTimeout(function () {
-          document.querySelector('[data-connection]').classList.add('connection--hidden');
+          document.querySelector('[data-email-capture]').classList.add('email-capture--hidden');
         }, 750);
       },
       error: function(error) {

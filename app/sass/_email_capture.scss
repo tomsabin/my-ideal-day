@@ -1,4 +1,4 @@
-.connection {
+.email-capture {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.connection__label {
+.email-capture__label {
   background-color: $gray;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -30,7 +30,7 @@
   }
 }
 
-.connection__close {
+.email-capture__close {
   -webkit-user-select: none;
   background-color: white;
   border-radius: 50%;
@@ -46,7 +46,7 @@
   top: 43px;
 }
 
-.connection__container {
+.email-capture__container {
   background-color: white;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -56,7 +56,7 @@
   padding: 18px;
 }
 
-.connection__input {
+.email-capture__input {
   background-color: #F7F7F7;
   border-radius: 8px;
   border: 0;
@@ -81,7 +81,7 @@
   }
 }
 
-.connection__button {
+.email-capture__button {
   background: $green;
   border-radius: 8px;
   border: 0;

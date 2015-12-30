@@ -43,13 +43,13 @@ body {
   }
 }
 
-.connection {
+.email-capture {
   height: 342px;
   opacity: 1;
   transition: 1s ease-in-out;
 }
 
-.connection--hidden {
+.email-capture--hidden {
   height: 0;
   opacity: 0;
   transform: translate(0, -200vh);
@@ -98,4 +98,4 @@ body {
 @import 'submit';
 @import 'submissions';
 @import 'submission';
-@import 'connection';
+@import 'email_capture';
