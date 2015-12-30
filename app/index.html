@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="assets/application.css">
     <script src="assets/vendor/parse.min.js"></script>
-    <script src="assets/vendor/mustache.min.js"></script>
     <script type="text/javascript">
       (function() {
         var path = '//easy.myfonts.net/v2/js?&sid=249134(font-family=Gentleman+Light)&sid=249135(font-family=Gentleman+Book)&sid=249138(font-family=Gentleman+Bold)&key=DElnFXZut8',
@@ -39,7 +38,6 @@
     <video src="assets/background.mp4" autoplay loop poster="assets/images/background.jpg" class="background-video"></video>
 
     <div class="questions" data-cards-container>
-
       <div class="intro">
         <div class="intro__title">
           Hello :)
@@ -137,89 +135,8 @@
           </div>
         </div>
       </div>
-
     </div>
 
-    <div class="submissions" data-submissions-container>
-
-      <div class="submissions__container">
-        <div class="submissions__latest" data-latest-submission>
-        </div>
-
-        <div class="connection" data-connection>
-          <label class="connection__label" for="name">
-            We’re launching a <b>platform</b> to connect you to <b>opportunities</b> and <b>conversations</b> that will help you <strong>make positive changes</strong> in your life.
-          </label>
-          <div class="connection__close" data-connection-close>
-            &#10005;
-          </div>
-          <form action="" class="connection__container">
-            Let me know when it launches:
-            <input class="connection__input" type="email" id="email" placeholder="Your email address" required>
-            <input class="connection__button" type="submit" value="Submit" data-connection-action>
-          </form>
-        </div>
-
-        <div data-other-submissions>
-        </div>
-      </div>
-
-    </div>
-
-    <script id="submissionTemplate" type="text/mustache">
-      {{ #submissions }}
-        <div class="submission submission--{{ feel }}">
-          <div class="submission__name">
-            {{ #name }}
-              {{ name }}
-            {{ /name }}
-
-            {{ ^name }}
-              Anonymous
-            {{ /name }}
-          </div>
-          {{ #latest }}
-            <a href="#" class="submission__social-link" title="Share on Facebook" id="facebookShare" target="_blank">
-              <img src="assets/images/facebook.png" alt="Share on Facebook" class="submission__social-image" />
-            </a>
-          {{ /latest }}
-          <div class="submission__text">
-            <div class="submission__ideal-day">
-              {{ ideal }}
-            </div>
-
-            <div class="submission__today">
-              {{ today }}
-            </div>
-          </div>
-
-          {{ #lifegap }}
-            <div class="submission__lifegap">
-              <div class="submission__lifegap-label">
-                Lifegap:
-              </div>
-              <div class="submission__lifegap-content">
-                <img class="submission__lifegap-min" src="assets/images/heart--broken.png" alt="hate" />
-                <progress class="submission__lifegap-progress" value="{{ lifegap }}" max="6"></progress>
-                <img class="submission__lifegap-max" src="assets/images/heart.png" alt="love" />
-              </div>
-            </div>
-          {{ /lifegap }}
-
-          {{ #feel }}
-            <div class="submission__feels">
-              <div class="submission__feels-label">
-                Feels:
-              </div>
-              <div class="submission__feels-content">
-                <img class="submission__emoticon" src="assets/images/feel/{{ feel }}.png" alt="{{ feel }}" />
-                {{ feel }}
-              </div>
-            </div>
-          {{ /feel }}
-        </div>
-      {{ /submissions }}
-    </script>
-    <script src="assets/application.js"></script>
+    <script src="assets/index.js"></script>
   </body>
 </html>

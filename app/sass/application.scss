@@ -24,7 +24,35 @@ body {
 }
 
 .submissions {
-  display: none;
+  .submissions__latest {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(.5, .5, 0, 1);
+  }
+
+  .submissions__other {
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(.5, .5, 0, 1);
+    transition-delay: .5s;
+  }
+}
+
+.submissions--loaded {
+  .submissions__latest,
+  .submissions__other {
+    opacity: 1;
+  }
+}
+
+.connection {
+  height: 342px;
+  opacity: 1;
+  transition: 1s ease-in-out;
+}
+
+.connection--hidden {
+  height: 0;
+  opacity: 0;
+  transform: translate(0, -200vh);
 }
 
 .card {
@@ -37,12 +65,8 @@ body {
 }
 
 @keyframes slideIn {
-  from {
-    transform: translateY(-100vh);
-  }
-  to {
-    transform: translateY(0);
-  }
+  from { transform: translateY(-100vh) }
+  to   { transform: translateY(0) }
 }
 
 .intro__title {

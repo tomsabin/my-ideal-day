@@ -23,6 +23,7 @@ gulp.task('browserSync', function () {
 gulp.task('build', function () {
   gulp.src('app/assets/**/*').pipe(gulp.dest('build/assets/'));
   gulp.src('app/index.html').pipe(gulp.dest('build/'));
+  gulp.src('app/feed/index.html').pipe(gulp.dest('build/feed'));
   gulp.src('app/sass/application.scss')
     .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
     .pipe(gulp.dest('build/assets/'))
