@@ -1,5 +1,11 @@
 analytics.track('Visited feed');
 
+
+document.querySelector('[data-beta-banner-close]').addEventListener('click', function (event) {
+  document.querySelector('[data-beta-banner]').classList.add('beta-banner--hidden');
+});
+
+
 document.querySelector('[data-email-capture-close]').addEventListener('click', function (event) {
   document.querySelector('[data-email-capture]').classList.add('email-capture--hidden');
 });

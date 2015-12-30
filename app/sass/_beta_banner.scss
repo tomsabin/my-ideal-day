@@ -1,0 +1,62 @@
+.beta-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+	opacity: 1;
+	box-sizing: border-box;
+
+	height:87px;
+
+    transition: 1s ease-in-out;
+    overflow: visible;
+}
+
+.beta-banner__container {
+	
+	background-color:$gray;
+	color:white;
+	font-size: 14px;
+	position:relative;
+
+	padding: 12px 18px 10px;
+	border-radius: 8px;
+
+	line-height: 1.1;
+
+	
+
+
+	a{
+		color:inherit;
+	}
+
+
+
+}
+
+.beta-banner__close {
+
+  -webkit-user-select: none;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid $gray;
+  color: $gray;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 0;
+  padding: 11px 4.5px 9px 5px;
+  position: absolute;
+  right: -7px;
+  top: -6px;
+
+  }
+
+  .beta-banner--hidden {
+ 
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0;
+  /*transform: translate(0, -200vh);*/
+  }
