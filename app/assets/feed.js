@@ -53,14 +53,14 @@ function renderSubmissions (latestSubmission, submissions) {
         latest: true
       });
 
-    var link = 'https://www.facebook.com/dialog/share?app_id=1042614292427958&href=http://my-ideal-day.co/&redirect_uri=http://my-ideal-day.co/close.html';
+    var link = 'https://www.facebook.com/dialog/share?app_id=1042614292427958&href=http://my-ideal-day.co/&redirect_uri=http://my-ideal-day.co/close.html&display=popup';
     link += '&picture=http://my-ideal-day.co/assets/images/share/' + latestSubmission.feel + '.jpg';
     link += '&title=I explored my life gap and I am ' + latestSubmission.feel.toUpperCase();
 
     var element = document.getElementById('facebookShare')
     element.href = link;
     element.addEventListener('click', function (event) {
-      window.open(this.href, '_blank', 'left=0,top=0,width=600,height=660,toolbar=1,resizable=0');
+      window.open(this.href, '_blank', 'left=0,top=0,width=560,height=600,toolbar=1,resizable=0');
       return false;
     });
   }
