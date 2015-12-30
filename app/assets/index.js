@@ -1,10 +1,4 @@
-Parse.initialize('XnG27Mf7YQqvPruZ4E9Teb9A3aZjKF27M9A4N1NG', '6dp7f8DsEerSTdQnWzK83JuAbrXA7mRx3tuJN44C');
-Submission = Parse.Object.extend('Submission');
 analytics.track('Visited site');
-
-function log (message, object) {
-  console.log(new Date().getTime(), message, object);
-}
 
 function cardClick (event, callback) {
   function findParent (element, attribute) {
@@ -33,39 +27,10 @@ function cardClick (event, callback) {
 }
 
 document.querySelector('[data-card-index="0"] [data-next-action]').addEventListener('click', cardClick);
+
 document.querySelector('[data-card-index="1"] [data-next-action]').addEventListener('click', function (event) {
-  cardClick(event, function () {
-    fetchSubmissions(function (results) {
-      log('fetched ' + results.length + ' results:' , results);
-      localStorage.setItem('Submissions', JSON.stringify(results));
-    });
-  });
+  cardClick(event, fetchSubmissions());
 });
-
-function fetchSubmissions (callback) {
-  var query = new Parse.Query(Submission);
-  query.descending("createdAt").find({
-    success: callback,
-    error: function(error) {
-      log('error: ', error);
-    }
-  });
-}
-
-function storeSubmission (submission) {
-  log('(1/2) saving submission to Parse: ', submission.attributes);
-
-  submission.save(null, {
-    success: function() {
-      log('(2/2) successfully saved latest submission.');
-    },
-    error: function(error) {
-      log('(2/2) error while trying to save latest submission.', error);
-    }
-  });
-
-  localStorage.setItem('LatestSubmission', JSON.stringify(submission));
-}
 
 document.querySelector('[data-card-submit] [data-submit-action]').addEventListener('click', function (event) {
   event.preventDefault();
@@ -81,12 +46,20 @@ document.querySelector('[data-card-submit] [data-submit-action]').addEventListen
   submission.set('today', document.getElementById('dayToday').value);
   submission.set('lifegap', document.getElementById('lifeGap').value);
   submission.set('feel', feels !== null ? feels.value : '');
-  storeSubmission(submission);
-  renderSubmissions();
-  analytics.track('Clicked: Lets finish');
-});
 
-function renderSubmissions () {
+  log('(1/2) saving submission to Parse: ', submission.attributes);
+
+  submission.save(null, {
+    success: function() {
+      log('(2/2) successfully saved latest submission.');
+    },
+    error: function(error) {
+      log('(2/2) error while trying to save latest submission.', error);
+    }
+  });
+
+  analytics.track('Clicked: Lets finish');
+  sessionStorage.setItem('LatestSubmission', JSON.stringify(submission));
   document.querySelector('[data-cards-container]').classList.add('questions--hidden');
-  window.location = 'feed'
-}
+  window.location = 'feed';
+});
