@@ -1,5 +1,4 @@
 Parse.initialize('XnG27Mf7YQqvPruZ4E9Teb9A3aZjKF27M9A4N1NG', '6dp7f8DsEerSTdQnWzK83JuAbrXA7mRx3tuJN44C');
-// Parse.initialize('XnG27Mf7YQqvPruZ4E9Teb9A3aZjKF27M9A4N1NG', '6dp');
 Submission = Parse.Object.extend('Submission');
 Connection = Parse.Object.extend('Connection');
 
