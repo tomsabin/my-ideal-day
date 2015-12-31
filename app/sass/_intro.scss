@@ -1,11 +1,11 @@
 .intro {
   animation: fadeIn 1.25s cubic-bezier(.5, .5, 0, 1) 1s forwards;
   color: $purple;
-  margin-left: 40px;
+  width:100%;
   opacity: 0;
   position: absolute;
   text-align: center;
-  top: -120px;
+  top: calc(50vh - 280px);
 }
 
 .intro__title {
@@ -24,4 +24,39 @@
   font-family: 'Gentleman Book', sans-serif;
   font-size: 16px;
   margin-top: 10px;
+
+  opacity: 0;
+
+  transition: 1.5s ease-in-out;
+}
+
+.intro__hint--visible {
+
+  opacity: 1;
+}
+
+.intro__title p, .intro__subtitle p {display:inline;}
+
+.typed-cursor{
+    display:inline;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+    font-family: 'Gentleman Book', sans-serif;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }

@@ -5,7 +5,9 @@
     <title>My Ideal Day</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="assets/application.css">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="assets/vendor/parse.min.js"></script>
+    <script src="assets/vendor/typed.min.js"></script>
     <script type="text/javascript">
       (function() {
         var path = '//easy.myfonts.net/v2/js?&sid=249134(font-family=Gentleman+Light)&sid=249135(font-family=Gentleman+Book)&sid=249138(font-family=Gentleman+Bold)&key=DElnFXZut8',
@@ -37,30 +39,32 @@
   <body>
     <video src="assets/background.mp4" autoplay loop poster="assets/images/background.jpg" class="background-video"></video>
 
-    <div class="questions" data-cards-container>
-      <div class="intro">
-        <div class="intro__title">
-          Hello :)
-        </div>
-        <div class="intro__subtitle">
-          Where would you like to be?
-        </div>
-        <div class="intro__hint">
-          (I'm only 2 questions)
-        </div>
+    <div class="intro">
+      <div class="intro__title">
+        <p></p>
       </div>
+      <div class="intro__subtitle">
+        <p></p>
+      </div>
+      <div class="intro__hint">
+        <p>(I'm only 2&frac12; questions)</p>
+      </div>
+    </div>
+
+    <div class="questions" data-cards-container>
 
       <div class="intro--card card" data-card-index="0">
         <div class="question question--blue">
           <label class="question__label" for="idealDay">
             My ideal day is...
           </label>
-          <textarea class="question__input" autofocus id="idealDay" tabindex="-1"></textarea>
+          <textarea class="question__input" id="idealDay" tabindex="-1"></textarea>
           <button class="question__submit" data-next-action tabindex="-1">
             Next question
           </button>
         </div>
       </div>
+
 
       <div class="card" data-card-index="1">
         <div class="question question--orange">
