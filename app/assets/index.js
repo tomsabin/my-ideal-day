@@ -65,47 +65,30 @@ document.querySelector('[data-card-submit] [data-submit-action]').addEventListen
 });
 
 $('.intro__title p').typed({
-
-  strings: ['^700Hello :)'], 
+  strings: ['^700Hello :)'],
   typeSpeed: 200,
-  callback: function(){
+  callback: function () {
 
     $('.intro__title .typed-cursor').css('visibility', 'hidden');
+    $('.intro__subtitle p').typed({
 
+      strings: ['We invite you to take a few minutes to reflect on where you\'re at.^1000'],
+      typeSpeed: 50,
+      callback: function () {
+        $('.intro__subtitle').html('<p></p>');
         $('.intro__subtitle p').typed({
 
-          strings: ['We invite you to take a few minutes to reflect on where you\'re at.^1000'], 
+          strings: ['Where would you like to be?^1000'],
           typeSpeed: 50,
-
-          callback: function(){
-
-              $('.intro__subtitle').html('<p></p>');
-
-              $('.intro__subtitle p').typed({
-
-                  strings: ['Where would you like to be?^1000'], 
-                  typeSpeed: 50,
-
-                  callback: function(){
-
-                      $('.intro__subtitle .typed-cursor').css('visibility', 'hidden');
-
-                      $('.intro__hint').addClass('intro__hint--visible').delay(250);
-
-                      setTimeout(function() { 
-                          
-                          $("#idealDay").focus();
-
-                      }, 500);
-                      
-                  }
-
-              })                
-          }    
-
-        })
-
+          callback: function () {
+            $('.intro__subtitle .typed-cursor').css('visibility', 'hidden');
+            $('.intro__hint').addClass('intro__hint--visible').delay(250);
+            setTimeout(function () {
+              $("#idealDay").focus();
+            }, 500);
+          }
+        });
+      }
+    });
   }
-
-  });
-
+});
