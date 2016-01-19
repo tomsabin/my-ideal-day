@@ -1,13 +1,16 @@
 .questions {
-  box-sizing: border-box;
   counter-reset: questions;
   height: 100%;
   margin: 0 auto;
   max-width: 500px;
   padding-left: 46px;
-  position: relative;
-  transform: translate(0, calc(50vh - 140px));
+  // position: relative;
+
   transition: 1s ease-in-out;
+
+  @media (min-height: 500px) {
+    transform: translate(0, calc(50vh - 260px));
+  }
 }
 
 .questions--hidden {

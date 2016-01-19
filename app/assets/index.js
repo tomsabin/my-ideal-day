@@ -64,25 +64,26 @@ document.querySelector('[data-card-submit] [data-submit-action]').addEventListen
   window.location = 'feed';
 });
 
-$('.intro__title p').typed({
+$('.intro__title span').typed({
   strings: ['^700Hello :)'],
   typeSpeed: 200,
   callback: function () {
 
     $('.intro__title .typed-cursor').css('visibility', 'hidden');
-    $('.intro__subtitle p').typed({
+    $('.intro__subtitle span').typed({
 
       strings: ['We invite you to take a few minutes to reflect on where you\'re at.^1000'],
       typeSpeed: 50,
       callback: function () {
-        $('.intro__subtitle').html('<p></p>');
-        $('.intro__subtitle p').typed({
+        $('.intro__subtitle').html('<span></span>');
+        $('.intro__subtitle span').typed({
 
           strings: ['Where would you like to be?^1000'],
           typeSpeed: 50,
           callback: function () {
             $('.intro__subtitle .typed-cursor').css('visibility', 'hidden');
             $('.intro__hint').addClass('intro__hint--visible').delay(250);
+            $('.intro').animate({'min-height': "145px"}, 1000);
             setTimeout(function () {
               $("#idealDay").focus();
             }, 500);
