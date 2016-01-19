@@ -1,0 +1,17 @@
+.card {
+  opacity: 0;
+  transition: 1s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+.intro--card {
+  animation: fadeIn 1.25s cubic-bezier(.5, .5, 0, 1) 1s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
