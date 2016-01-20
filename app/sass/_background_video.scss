@@ -8,3 +8,8 @@
   transform: translateX(-50%) translateY(-50%);
   z-index: -1;
 }
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
