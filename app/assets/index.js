@@ -83,7 +83,7 @@ $('.intro__title span').typed({
           callback: function () {
             $('.intro__subtitle .typed-cursor').css('visibility', 'hidden');
             $('.intro__hint').addClass('intro__hint--visible').delay(250);
-            $('.intro').animate({'min-height': "145px"}, 1000);
+            $('.intro').animate({'min-height': "0"}, 1500);
             setTimeout(function () {
               $("#idealDay").focus();
             }, 500);

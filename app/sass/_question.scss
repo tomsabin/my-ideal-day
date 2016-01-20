@@ -9,7 +9,7 @@
   background-color: white;
   display: block;
   font-family: 'Gentleman Book', sans-serif;
-  font-size: 26px;
+  font-size: 1.6rem;
   line-height: 1.1;
   padding: 12px 28px;
   position: relative;
@@ -76,9 +76,8 @@
   line-height: 0;
   margin-top: 16px;
   outline: 0;
-  padding: 25px 0 22px;
+  padding: 25px 22px 22px 22px;
   text-transform: uppercase;
-  width: 45%;
 
   &:not(:disabled):focus,
   &:not(:disabled):hover {

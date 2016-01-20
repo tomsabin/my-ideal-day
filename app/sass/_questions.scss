@@ -7,7 +7,7 @@
 
   transition: 1s ease-in-out;
 
-  @media (min-height: 500px) {
+  @media (min-width: 480px) {
     transform: translate(0, calc(50vh - 260px));
   }
 }

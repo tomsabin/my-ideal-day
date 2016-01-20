@@ -8,19 +8,19 @@
   min-height: 145px;
 
   @media (max-width: 480px) {
-    min-height: 190px;
+    min-height: 135px;
   }
 }
 
 .intro__title {
   display: block;
   font-family: 'Gentleman Bold', sans-serif;
-  font-size: 64px;
+  font-size: 4rem;
 }
 
 .intro__subtitle {
   font-family: 'Gentleman Book', sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-top: 4px;
 
   transition: all 0.5s ease-out;
@@ -28,7 +28,7 @@
 
 .intro__hint {
   font-family: 'Gentleman Book', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   margin-top: 10px;
   opacity: 0;
   transition: 1.5s ease-in-out;

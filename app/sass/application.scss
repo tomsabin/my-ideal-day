@@ -12,6 +12,11 @@ $purple: #654393;
 
 html {
   height: 100%;
+  font-size: 100%;
+
+  @media (max-width: 480px) {
+    font-size: 75%;
+  }
 }
 
 body {
@@ -23,6 +28,7 @@ body {
 
 .main {
   padding: 1rem;
+  padding-top: 2rem;
 }
 
 
