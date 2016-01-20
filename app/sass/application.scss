@@ -25,7 +25,9 @@ body {
   height: 100%;
 
   @media (min-width: 500px) {
-    overflow: hidden;
+    &#questions {
+      overflow: hidden;
+    }
   }
 }
 

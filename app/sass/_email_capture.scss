@@ -8,6 +8,10 @@
   position: relative;
   transition: 1s ease-in-out;
   z-index: 2;
+
+  @media (max-width: 400px) {
+    height: 400px;
+  }
 }
 
 .email-capture--hidden {
@@ -53,7 +57,8 @@
   padding: 11px 4.5px 9px 5px;
   position: absolute;
   right: -7px;
-  top: 43px;
+  top: -7px;
+  z-index: 2;
 }
 
 .email-capture__container {

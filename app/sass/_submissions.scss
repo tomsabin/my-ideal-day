@@ -1,6 +1,6 @@
 .submissions {
   height: 100%;
-  overflow: auto;
+  // overflow: auto;
   box-sizing: border-box;
 }
 
@@ -13,6 +13,10 @@
   padding: 40px 0;
   box-sizing: border-box;
   max-width: 500px;
+
+  @media (max-width: 600px) {
+    padding: 0;
+  }
 }
 
 .submissions__latest {
