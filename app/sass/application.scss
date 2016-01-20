@@ -23,7 +23,10 @@ body {
   background-color: #BB9BDA;
   font-family: 'Gentleman Book', sans-serif;
   height: 100%;
-  overflow: hidden;
+
+  @media (min-width: 500px) {
+    overflow: hidden;
+  }
 }
 
 .main {

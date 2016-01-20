@@ -11,13 +11,27 @@ function cardClick (event, callback) {
       currentInput = parentCard.querySelector('textarea');
 
   if (currentInput.value !== '') {
-    event.target.disabled = true;
-    currentInput.disabled = true;
-    var topOffset = parentCard.getBoundingClientRect().height * (cardIndex + 1)
+    // event.target.disabled = true;
+    // currentInput.disabled = true;
+
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if(viewportWidth < 500) {
+
+      $('body').animate({ scrollTop: $(nextCard).offset().top }, 1000, 'swing', function() {
+        $(nextCard).find('textarea, input').select();
+      });
+
+    } else {
+
+      var topOffset = parentCard.getBoundingClientRect().height * (cardIndex + 1)
                     + (nextCard.getBoundingClientRect().height / 2);
-    var transformValue = 'translate(0, calc(50vh - ' + topOffset + 'px))';
-    document.querySelector('[data-cards-container]').style.transform = transformValue;
-    nextCard.querySelector('textarea, input').select();
+      var transformValue = 'translate(0, calc(50vh - ' + topOffset + 'px))';
+
+      document.querySelector('[data-cards-container]').style.transform = transformValue;
+      nextCard.querySelector('textarea, input').select();
+    }
+
     nextCard.classList.add('visible');
 
     analytics.track('Clicked: ' + parentCard.querySelector('label').textContent.trim());
