@@ -19,7 +19,7 @@ function cardClick (event, callback) {
     if(viewportWidth < 500) {
 
       $('body').animate({ scrollTop: $(nextCard).offset().top }, 1000, 'swing', function() {
-        $(nextCard).find('textarea, input').select();
+        $(nextCard).find('textarea').select();
       });
 
     } else {
