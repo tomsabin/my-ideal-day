@@ -11,13 +11,27 @@ function cardClick (event, callback) {
       currentInput = parentCard.querySelector('textarea');
 
   if (currentInput.value !== '') {
-    event.target.disabled = true;
-    currentInput.disabled = true;
-    var topOffset = parentCard.getBoundingClientRect().height * (cardIndex + 1)
+    // event.target.disabled = true;
+    // currentInput.disabled = true;
+
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if(viewportWidth < 500) {
+
+      $('body').animate({ scrollTop: $(nextCard).offset().top }, 1000, 'swing', function() {
+        $(nextCard).find('textarea').select();
+      });
+
+    } else {
+
+      var topOffset = parentCard.getBoundingClientRect().height * (cardIndex + 1)
                     + (nextCard.getBoundingClientRect().height / 2);
-    var transformValue = 'translate(0, calc(50vh - ' + topOffset + 'px))';
-    document.querySelector('[data-cards-container]').style.transform = transformValue;
-    nextCard.querySelector('textarea, input').select();
+      var transformValue = 'translate(0, calc(50vh - ' + topOffset + 'px))';
+
+      document.querySelector('[data-cards-container]').style.transform = transformValue;
+      nextCard.querySelector('textarea, input').select();
+    }
+
     nextCard.classList.add('visible');
 
     analytics.track('Clicked: ' + parentCard.querySelector('label').textContent.trim());
@@ -64,25 +78,26 @@ document.querySelector('[data-card-submit] [data-submit-action]').addEventListen
   window.location = 'feed';
 });
 
-$('.intro__title p').typed({
+$('.intro__title span').typed({
   strings: ['^700Hello :)'],
   typeSpeed: 200,
   callback: function () {
 
     $('.intro__title .typed-cursor').css('visibility', 'hidden');
-    $('.intro__subtitle p').typed({
+    $('.intro__subtitle span').typed({
 
       strings: ['We invite you to take a few minutes to reflect on where you\'re at.^1000'],
       typeSpeed: 50,
       callback: function () {
-        $('.intro__subtitle').html('<p></p>');
-        $('.intro__subtitle p').typed({
+        $('.intro__subtitle').html('<span></span>');
+        $('.intro__subtitle span').typed({
 
           strings: ['Where would you like to be?^1000'],
           typeSpeed: 50,
           callback: function () {
             $('.intro__subtitle .typed-cursor').css('visibility', 'hidden');
             $('.intro__hint').addClass('intro__hint--visible').delay(250);
+            $('.intro').animate({'min-height': "0"}, 1500);
             setTimeout(function () {
               $("#idealDay").focus();
             }, 500);

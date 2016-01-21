@@ -6,35 +6,38 @@ $green: #6DD468;
 $orange: #faaa4c;
 $purple: #654393;
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
+  font-size: 100%;
+
+  @media (max-width: 480px) {
+    font-size: 75%;
+  }
 }
 
 body {
   background-color: #BB9BDA;
   font-family: 'Gentleman Book', sans-serif;
   height: 100%;
-  overflow: hidden;
-}
 
-.card {
-  opacity: 0;
-  transition: 1s ease-in-out;
-
-  &.visible {
-    opacity: 1;
+  @media (min-width: 500px) {
+    &#questions {
+      overflow: hidden;
+    }
   }
 }
 
-.intro--card {
-  animation: fadeIn 1.25s cubic-bezier(.5, .5, 0, 1) 1s forwards;
+.main {
+  padding: 1rem;
+  padding-top: 2rem;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
 
+@import 'card';
 @import 'background_video';
 @import 'intro';
 @import 'typed_cursor';

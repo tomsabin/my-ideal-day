@@ -36,109 +36,111 @@
         analytics.page()
       }}();
     </script>
-  <body>
+  <body id='questions'>
     <video src="assets/background.mp4" autoplay loop poster="assets/images/background.jpg" class="background-video"></video>
 
-    <div class="questions" data-cards-container>
+    <section class='main'>
+      <div class="questions" data-cards-container>
 
-      <div class="intro">
-        <div class="intro__title">
-          <p></p>
-        </div>
-        <div class="intro__subtitle">
-          <p></p>
-        </div>
-        <div class="intro__hint">
-          <p>(I'm only 2&frac12; questions)</p>
-        </div>
-      </div>
-
-      <div class="intro--card card" data-card-index="0">
-        <div class="question question--blue">
-          <label class="question__label" for="idealDay">
-            My ideal day is...
-          </label>
-          <textarea class="question__input" id="idealDay" tabindex="-1"></textarea>
-          <button class="question__submit" data-next-action tabindex="-1">
-            Next question
-          </button>
-        </div>
-      </div>
-
-      <div class="card" data-card-index="1">
-        <div class="question question--orange">
-          <label class="question__label" for="dayToday">
-            Today, I...
-          </label>
-          <textarea class="question__input" id="dayToday" tabindex="-1"></textarea>
-          <button class="question__submit" data-next-action tabindex="-1">
-            Next
-          </button>
-        </div>
-      </div>
-
-      <div class="card" data-card-index="2" data-card-submit>
-        <div class="question question--submit question--purple">
-          <label class="question__label">
-            How far is your ideal day from your current day?
-          </label>
-
-          <div class="lifegap">
-            <img class="lifegap__min" src="assets/images/heart--broken.png" alt="hate">
-            <div class="lifegap__range-container">
-              <input class="lifegap__range" id="lifeGap" type="range" name="points" min="0" max="6">
-            </div>
-            <img class="lifegap__max" src="assets/images/heart.png" alt="love">
+        <div class="intro">
+          <div class="intro__title">
+            <span></span>
           </div>
-
-          <label class="question__label question__label--contained">
-            How do you feel about this?
-          </label>
-
-          <div class="feels">
-            <input class="feels__input" type="radio" name="feels" value="bored" id="bored" checked="checked">
-            <label class="feels__label" for="bored">Bored</label>
-
-            <input class="feels__input" type="radio" name="feels" value="surprised" id="surprised">
-            <label class="feels__label" for="surprised">Surprised</label>
-
-            <input class="feels__input" type="radio" name="feels" value="joyful" id="joyful">
-            <label class="feels__label" for="joyful">Joyful</label>
-
-            <input class="feels__input" type="radio" name="feels" value="fearful" id="fearful">
-            <label class="feels__label" for="fearful">Fearful</label>
-
-            <input class="feels__input" type="radio" name="feels" value="angry" id="angry">
-            <label class="feels__label" for="angry">Angry</label>
-
-            <input class="feels__input" type="radio" name="feels" value="serene" id="serene">
-            <label class="feels__label" for="serene">Serene</label>
-
-            <input class="feels__input" type="radio" name="feels" value="annoyed" id="annoyed">
-            <label class="feels__label" for="annoyed">Annoyed</label>
-
-            <input class="feels__input" type="radio" name="feels" value="sad" id="sad">
-            <label class="feels__label" for="sad">Sad</label>
-
-            <input class="feels__input" type="radio" name="feels" value="pensive" id="pensive">
-            <label class="feels__label" for="pensive">Pensive</label>
-
-            <input class="feels__input" type="radio" name="feels" value="accepting" id="accepting">
-            <label class="feels__label" for="accepting">Accepting</label>
+          <div class="intro__subtitle">
+            <span class='words'></span>
           </div>
+          <div class="intro__hint">
+            <p>(I'm only 2&frac12; questions)</p>
+          </div>
+        </div>
 
-          <div class="submit">
-            <label class="submit__label" for="name">
-              Share with others
+        <div class="intro--card card" data-card-index="0">
+          <div class="question question--blue">
+            <label class="question__label" for="idealDay">
+              My ideal day is...
             </label>
-            <div class="submit__container">
-              <input class="submit__input" id="name" type="text" placeholder="Your name (optional)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="-1">
-              <input class="submit__button" type="submit" value="Share" tabindex="-1" data-submit-action>
+            <textarea class="question__input" id="idealDay" tabindex="-1"></textarea>
+            <button class="question__submit" data-next-action tabindex="-1">
+              Next question
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-card-index="1">
+          <div class="question question--orange">
+            <label class="question__label" for="dayToday">
+              Today, I...
+            </label>
+            <textarea class="question__input" id="dayToday" tabindex="-1"></textarea>
+            <button class="question__submit" data-next-action tabindex="-1">
+              Next
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-card-index="2" data-card-submit>
+          <div class="question question--submit question--purple">
+            <label class="question__label">
+              How far is your ideal day from your current day?
+            </label>
+
+            <div class="lifegap">
+              <img class="lifegap__min" src="assets/images/heart--broken.png" alt="hate">
+              <div class="lifegap__range-container">
+                <input class="lifegap__range" id="lifeGap" type="range" name="points" min="0" max="6">
+              </div>
+              <img class="lifegap__max" src="assets/images/heart.png" alt="love">
+            </div>
+
+            <label class="question__label question__label--contained">
+              How do you feel about this?
+            </label>
+
+            <div class="feels">
+              <input class="feels__input" type="radio" name="feels" value="bored" id="bored" checked="checked">
+              <label class="feels__label" for="bored">Bored</label>
+
+              <input class="feels__input" type="radio" name="feels" value="surprised" id="surprised">
+              <label class="feels__label" for="surprised">Surprised</label>
+
+              <input class="feels__input" type="radio" name="feels" value="joyful" id="joyful">
+              <label class="feels__label" for="joyful">Joyful</label>
+
+              <input class="feels__input" type="radio" name="feels" value="fearful" id="fearful">
+              <label class="feels__label" for="fearful">Fearful</label>
+
+              <input class="feels__input" type="radio" name="feels" value="angry" id="angry">
+              <label class="feels__label" for="angry">Angry</label>
+
+              <input class="feels__input" type="radio" name="feels" value="serene" id="serene">
+              <label class="feels__label" for="serene">Serene</label>
+
+              <input class="feels__input" type="radio" name="feels" value="annoyed" id="annoyed">
+              <label class="feels__label" for="annoyed">Annoyed</label>
+
+              <input class="feels__input" type="radio" name="feels" value="sad" id="sad">
+              <label class="feels__label" for="sad">Sad</label>
+
+              <input class="feels__input" type="radio" name="feels" value="pensive" id="pensive">
+              <label class="feels__label" for="pensive">Pensive</label>
+
+              <input class="feels__input" type="radio" name="feels" value="accepting" id="accepting">
+              <label class="feels__label" for="accepting">Accepting</label>
+            </div>
+
+            <div class="submit">
+              <label class="submit__label" for="name">
+                Share with others
+              </label>
+              <div class="submit__container">
+                <input class="submit__input" id="name" type="text" placeholder="Your name (optional)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="-1">
+                <input class="submit__button" type="submit" value="Share" tabindex="-1" data-submit-action>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <script src="assets/shared.js"></script>
     <script src="assets/index.js"></script>

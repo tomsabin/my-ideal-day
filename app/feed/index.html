@@ -38,40 +38,43 @@
   <body>
     <video src="../assets/background.mp4" autoplay loop poster="../assets/images/background.jpg" class="background-video"></video>
 
-    <div class="submissions" data-submissions-container>
-      <div class="submissions__container">
-        <div class="submissions__latest" data-latest-submission>
-        </div>
+    <section class='main'>
 
-        <div class="submissions__other">
-          <div class="email-capture" data-email-capture>
-            <label class="email-capture__label" for="name">
-              We’re launching a <b>platform</b> to connect you to <b>opportunities</b> and <b>conversations</b> that will help you <strong>make positive changes</strong> in your life.
-            </label>
-            <div class="email-capture__close" data-email-capture-close>
-              &#10005;
-            </div>
-            <form action="" class="email-capture__container">
-              Let me know when it launches:
-              <input class="email-capture__input" type="email" id="email" placeholder="Your email address" required>
-              <input class="email-capture__button" type="submit" value="Submit" data-email-capture-action>
-            </form>
+      <div class="submissions" data-submissions-container>
+        <div class="submissions__container">
+          <div class="submissions__latest" data-latest-submission>
           </div>
 
-          <div class="beta-banner" data-beta-banner>
-            <div class="beta-banner__container">
-              BETA: this is a new service - your <a href="mailto:hello@my-ideal-day.co">feedback</a> will help us improve it.
-              <div class="beta-banner__close" data-beta-banner-close>
-                &#10005;
+          <div class="submissions__other">
+            <div class="email-capture" data-email-capture>
+
+              <label class="email-capture__label" for="name">
+                <span class="email-capture__close" data-email-capture-close>&#10005;</span>
+                We’re launching a <b>platform</b> to connect you to <b>opportunities</b> and <b>conversations</b> that will help you <strong>make positive changes</strong> in your life.
+              </label>
+
+              <form action="" class="email-capture__container">
+                Let me know when it launches:
+                <input class="email-capture__input" type="email" id="email" placeholder="Your email address" required>
+                <input class="email-capture__button" type="submit" value="Submit" data-email-capture-action>
+              </form>
+            </div>
+
+            <div class="beta-banner" data-beta-banner>
+              <div class="beta-banner__container">
+                BETA: this is a new service - your <a href="mailto:hello@my-ideal-day.co">feedback</a> will help us improve it.
+                <div class="beta-banner__close" data-beta-banner-close>
+                  &#10005;
+                </div>
               </div>
             </div>
-          </div>
 
-          <div data-other-submissions>
+            <div data-other-submissions>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <script id="submissionTemplate" type="text/mustache">
       {{ #submissions }}
