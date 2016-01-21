@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+    fs = require('fs');
 
 gulp.task('sass', function () {
   gulp.src('app/sass/application.scss')
@@ -27,7 +28,8 @@ gulp.task('build', function () {
   gulp.src('app/close.html').pipe(gulp.dest('build/'));
   gulp.src('app/sass/application.scss')
     .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest('build/assets/'))
+    .pipe(gulp.dest('build/assets/'));
+  fs.writeFileSync('build/CNAME', 'my-ideal-day.co')
 })
 
 gulp.task('watch', ['browserSync', 'sass'], function () {
