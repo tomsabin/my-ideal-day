@@ -14,7 +14,8 @@ function cardClick (event, callback) {
     // event.target.disabled = true;
     // currentInput.disabled = true;
 
-    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+        viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
     if(viewportWidth < 500) {
 
@@ -26,7 +27,11 @@ function cardClick (event, callback) {
 
       var topOffset = parentCard.getBoundingClientRect().height * (cardIndex + 1)
                     + (nextCard.getBoundingClientRect().height / 2);
-      var transformValue = 'translate(0, calc(50vh - ' + topOffset + 'px))';
+
+      // Smaller device heights need content pulled up higher
+      var baseOffset = viewportHeight < 900 ? 30 : 40;
+
+      var transformValue = 'translate(0, calc(' + baseOffset +'vh - ' + topOffset + 'px))';
 
       document.querySelector('[data-cards-container]').style.transform = transformValue;
       nextCard.querySelector('textarea, input').select();
